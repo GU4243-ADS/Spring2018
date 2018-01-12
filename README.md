@@ -7,7 +7,7 @@
 #### Class 1 (1/17)
 + [Class Introduction]
 + [Project 1 Description]
-+ [Tutorial: R Markdown]
++ [Tutorial: R Markdown and R Notebooks]
 
 #### Class 2 (1/22)
 + [Tutorial: GitHub]
