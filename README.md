@@ -12,5 +12,3 @@
 
 #### Class 2 (1/22)
 + [Tutorial: GitHub]
-
-HELLO
