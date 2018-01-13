@@ -20,7 +20,7 @@ Your jobs is to study the spooky text data using tools from text mining and natu
 We note that the Kaggle website says the following about the data, "The data was prepared by chunking larger texts into sentences using CoreNLP's MaxEnt sentence tokenizer, so you may notice the odd non-sentence here and there."
 
 Even though this is an individual project, you are **encouraged** to discuss online and exchange ideas. 
-The dataset `sppoky.csv`  contains the text data.  It has three columns: `id` giving an identifier for each excerpt, `text` containing the excerpt, and `author` indicating either `EAP`, `HPL`, or `MWS`.. 
+The dataset `sppoky.csv`  contains the text data.  It has three columns: `id` giving an identifier for each excerpt, `text` containing the excerpt, and `author` indicating either `EAP`, `HPL`, or `MWS`. 
 
 #### Submission
 You should produce an `R` notebook (rmd and html files) in your GitHub project folder, where you should write a story (think something like a blog post) on presidential inaugural speeches based on your data analysis. Your story should be supported by your results and appropriate visualizations. 
