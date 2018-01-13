@@ -21,7 +21,7 @@ TA: Wenda Zhou.
 
 # Course websites:
 1. Grades and basic course info: Courseworks <http://courseworks.columbia.edu>
-2. Discussion board: Piazza 
+2. Discussion board: Piazza <https://piazza.com/columbia/spring2018/statgu4243_001_2018_1applieddatascience/home>
 3. Course Materials: Github <https://github.com/GU4243-ADS/Spring2018>
 
 # Evaluation 

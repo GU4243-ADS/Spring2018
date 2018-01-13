@@ -1,0 +1,85 @@
+## STAT GU4243 Spring 2018 Applied Data Science
+### Project 1 An R Notebook Data Story on Horror Stories
+
+![](../figs/raven.jpeg)
+
+For this project we're going to work with some SPOOKY data, and by that I mean our data will consist of excerpts of texts written by the popular authors [Edgar Allan Poe](https://en.wikipedia.org/wiki/Edgar_Allan_Poe), [HP Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft), and [Mary Shelley](https://en.wikipedia.org/wiki/Mary_Shelley), all of whom are best known for their horror fiction.
+
+This data was originally used in a [Kaggle competition](https://www.kaggle.com/c/spooky-author-identification) that challenged data scientists to identify the authors of unlabeled text excerpts using a provided training data set.  Authorship identification is a popular subfield of Natural Language Processing (NLP) that uses data science and machine learning tools to try to identify the author of texts. See [1]-[3].  While we'll only be using labeled data and not exploring the prediction side of the problem, we want to use the challenge of author identification as a motivation in our stuy of this dataset.  Specifically we want to consider the similarities and the differences between the texts attributed to each author and study patterns that could be used to characterize the writing styles of the three authors.
+
+[1] David Madigan, Alexander Genkin, David D. Lewis, Shlomo Argamon, Dmitriy Fradkin, Li Ye. "Authorship attribution on the Large Scale." [available online:](http://dimacs.rutgers.edu/Research/MMS/PAPERS/authorid-csna05.pdf).
+
+[2] Efstathios Stamatatos. "A survey of modern authorship attribution methods." Journal of the American Society for information Science and Technology, 60(3):538–556, 2009.
+
+[3] Ahmed M. Mohsen, Nagwa M. El-Makky, and Nagia Ghanem. "Author Identification Using Deep Learning." Proceedings of the 15th IEEE International Conference on Machine Learning and Applications, 2016.
+
+### Challenge 
+
+Your jobs is to study the spooky text data using tools from text mining and natural language processing such as sentiment analysis, topic modeling, etc, all available in `R` and write a small story about characteristics of the texts of each of the authors, identifying and illustrating interesting similarities anddifferences identified by your analysis. 
+
+We note that the Kaggle website says the following about the data, "The data was prepared by chunking larger texts into sentences using CoreNLP's MaxEnt sentence tokenizer, so you may notice the odd non-sentence here and there."
+
+Even though this is an individual project, you are **encouraged** to discuss online and exchange ideas. 
+The dataset `sppoky.csv`  contains the text data.  It has three columns: `id` giving an identifier for each excerpt, `text` containing the excerpt, and `author` indicating either `EAP`, `HPL`, or `MWS`.. 
+
+#### Submission
+You should produce an `R` notebook (rmd and html files) in your GitHub project folder, where you should write a story (think something like a blog post) on presidential inaugural speeches based on your data analysis. Your story should be supported by your results and appropriate visualizations. 
+
+### Project organization
+
+A GitHub starter codes repo will be posted on Piazza for you to fork and start your own project. The GitHub repo will come with suggested *milestones*. 
+
+#### Useful resources
+
+##### R packages
+* R [dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) package
+* R [readr](https://github.com/hadley/readr) package
+* R [DT](http://www.htmlwidgets.org/showcase_datatables.html) package
+* R [tibble](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html)
+* [Rcharts](http://rcharts.io/gallery/), quick interactive plots
+* [htmlwidgets](http://www.htmlwidgets.org/), javascript library adaptation in R. 
+
+##### Project tools
+* A brief [guide](http://rogerdudler.github.io/git-guide/) to git.
+* Putting your project on [GitHub](https://guides.github.com/introduction/getting-your-project-on-github/).
+##### Examples
++ [Topic modeling](https://cran.r-project.org/web/packages/topicmodels/vignettes/topicmodels.pdf)
++ [Clustering](http://www.statmethods.net/advstats/cluster.html)
++ [Sentiment analysis of Trump's tweets](https://www.r-bloggers.com/sentiment-analysis-on-donald-trump-using-r-and-tableau/)
+
+##### Tutorials
+
+For this project we will give **tutorials** and give comments on:
+
+
+- GitHub
+- `R` notebook
+- Example of sentiment analysis and topic modeling
+
+#### Repositary requirement
+
+The final repo should be under our class github organization (GU4243-ADS) and be organized according to the structure of the starter codes. 
+
+```
+proj/
+├──data/
+├──doc/
+├──figs/
+├──lib/
+├──output/
+├── README
+```
+- The `data` folder contains the raw data of this project. These data should NOT be processed inside this folder. Processed data should be saved to `output` folder. This is to ensure that the raw data will not be altered. 
+- The `doc` folder should have documentations for this project, presentation files and other supporting materials. 
+- The `figs` folder contains figure files produced during the project and running of the codes. 
+- The `lib` folder contain computation codes for your data analysis. Make sure your README.md is informative about what are the programs found in this folder. 
+- The `output` folder is the holding place for intermediate and final computational results.
+
+The root README.md should contain your name and an abstract of your findings. 
+
+#### Suggested workflow
+This is a relatively short project. We only have about two weeks of working time. 
+
+1. [Before 1/22] Familiarize yourself with data in `R`.
+1. [Week 1: 1/22 - 1/28] Week 1 is the **data processing and mining** week. Continue to explore the data and try out different tools you find related to this task.  Familiarize yourself wih Github, if this part is new for you.
+4. [Week 2: 1/29 - 2/4] Explore the data for interesting patterns and start writing your data story. 
