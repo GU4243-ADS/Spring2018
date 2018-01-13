@@ -12,7 +12,7 @@ This is the first and only *individual* (as opposed to *team*) this semester.
 
 Term: Spring 2018
 
-+ Projec title:
++ Project title:
 + This project is conducted by [your name]
 + Project summary: [a short summary] 
 
