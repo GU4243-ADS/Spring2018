@@ -1,0 +1,118 @@
+---
+title: "ADS Spring 2018 Syllabus"
+output: html_document
+---
+
+# Course Information
+
+Classes: Monday and Wednesday, 2:40pm - 3:55pm in 603 Hamilton Hall
+
+Instructor: Cynthia Rush
+
+* Email: cynthia.rush@columbia.edu
+
+* Office hours: Mondays 9:00am - 10:00am, Room 1009, SSW
+
+TA: Wenda Zhou.
+
+* Email: wz2335@columbia.edu
+
+* Office hours: TBD
+
+# Course websites:
+1. Grades and basic course info: http://courseworks.columbia.edu
+2. Discussion board: Piazza 
+3. Course Materials:
+
+# Evaluation 
+
+Evaluation of students' performance will be based on:
+1. Project products (instructor-reviewed and/or peer-reviewed, averaged over 4 projects) 90%
+2. Participation (instructors' observation) 10%
+
+We will enforce formal evaluation of participation as follows.
+
+* Each project needs to show clear collaboration and task assignments on GitHub using GitHub's features such as issues and projects. (We will provide a tutorial on how to use these features in week 1).
+* Teams should use GitHub to coordinate code sharing and project development throughout the project.
+* Students should participate actively in class discussion and Piazza discussion.
+* We will give participation score for each project cycle, the average of which will contribute to 10% of your final grade. The participation will be graded on the following curve.
+
+A: project leader, major contributor who contribute substantially in every stage of the project and class discussions.
+
+A-: major contributor who contributed substantially to two stages of the project and some discussions.
+
+B+: average participation, participate in the discussion at every stage and contribute substentially in at least one stage of the project and some discussions.
+
+B or lower: below average performance.
+
+*This is to ensure a positive learning process for all of us.
+
+# Prerequisites
+The pre-requisite for this course includes working knowledge in statistics and probability, data mining, statistical modeling and machine learning. Prior advanced programming experience in R or Python is required.
+
+# Description
+This course incorporates knowledge and skills covered in a statistical curriculum with topics and projects in data science. Programming will be covered using existing tools in R, while students can use tools from other languages. Computing best practices will be taught using test-driven development, version control, and collaboration. Students finish the class with a portfolio on GitHub, and deeper understanding of several core statistical/machine-learning algorithms.
+
+This course will be a project-based hands-on course in data science. No formal instruction on statistics, data science, machine learning will be given. Project cycles run every 3-4 weeks, where we will have mini data projects. Groups will be formed randomly and project products will be peer-reviewed, in addition to evaluation by the instructional team.
+
+#Course organization
+This course will have a total of four project cycles. Each project cycle follows a sequence of four types of activities.
+
+a. Dataset release, introduction to data science problem, individual exercises, team forming
+
+b. Lecture/tutorial
+
+c. Brainstorming, live hacking, code sharing
+
+d. Team presentation, peer reviews, within-team peer reviews
+
+Students will be working in teams of 5 students that will be randomly formed. For a meaningful experience in data science, students are expected to collaborate and work together on all the stages of a project. Code sharing and brainstorming are great opportunities to learn from each other.
+
+We will have a total of five project cycles for this course:
+
+1. [Individual] R notebook project.
+2. TBD
+3. TBD
+4. Free topic (multiple data sources will be provided).
+Below is a tentative schedule we will follow.
+
+*Week 0 (1/17): 1a
+*Week 1 (1/22 and 1/24): 1b
+*Week 2 (1/29 and 1/31): 1c
+*Week 3 (2/5 and 2/7): 1d (Project 1 due Monday, February 5)
+*Week 4 (2/12 and 2/14): 2a
+*Week 5 (2/19 and 2/21): 2b
+*Week 6 (2/26 and 2/28): 2c
+*Week 7 (3/5 and 3/7): 2d (Project 2 due Monday, March 5)
+*Spring Break (3/12 and 3/15)
+*Week 8 (3/19 and 3/21): 3a
+*Week 9 (3/26 and 3/28): 3b
+*Week 10 (4/2 and 4/4): 3c
+*Week 11 (4/9 and 4/12): 3d (Project 3 due Monday, April 9)
+*Week 12 (4/16 and 4/18): 4c
+*Week 13 (4/23 and 4/25): 4c
+*Week 14 (4/30): 4d (Final Project due Monday, April 30)
+
+#Communication
+Projects grades are managed in courseworks. We will be using the discussion/announcement tools in courseworks (via Piazza) for our online class communication and discussion. The system is highly catered to getting you help fast and efficiently from classmates, the TA, and myself. Rather than emailing questions to the teaching staff, I encourage you to post your questions online.
+
+#Textbook
+There is not a single required text. As part of this course, we will learn from what we can find online and in academic papers. Here are a couple of recommended reference books.
+
+1. Mount and Zumel (2014) Practical data science with R.
+2. Segaran (2007) Programming collective intelligence: building smart web 2.0 applications.
+3. Tuffe (2001) The visual display of quantitative information.
+4. Fung (2013) Numbersense: how to use big data to your advantage.
+
+#Class policy
+We learn together through projects. Please stay positive and congenial. Share what you know with your peers and also learn from them.
+
+Working towards deadlines can be stressful. Remember, that it is difficult to convey and discern tone in emails or online posts. Be mindful about how you phrase your questions, comments, inquiries, and suggestions. Also be generous when reading them.
+
+Academic integrity is the cornerstone of meaningful teaching and learning. It is especially important for our project-based course. Remember what matters most is how much you learn not what grade you receive. In your project, document references and resources that have been incorporated into your project and cite them appropriately. Plagiarism will not be tolerated in this course.
+
+Be a good team member and contribute to each project as much as you can. Don't underestimate the efforts of your teammates. Something that seems simple may not be that simple.
+
+Emails to the professor or TA relating to learning and projects will be redirected to Piazza.
+
+Students are expected to check emails at least once every 12 hours during the week and every 24 hours over the weekend. Students should make sure not to miss any important class-related announcements sent by emails or posted on Courseworks. Emails will be delivered to the students' official UNI. It is the students' responsibility to ensure that these emails are properly forwarded if they choose to use an alternative email address.
