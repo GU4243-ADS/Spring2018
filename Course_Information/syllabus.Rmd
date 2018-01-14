@@ -48,8 +48,6 @@ B+: average participation, participate in the discussion at every stage and cont
 
 B or lower: below average performance.
 
-*This is to ensure a positive learning process for all of us.
-
 # Prerequisites
 
 The prerequisite for this course includes working knowledge in statistics and probability, data mining, statistical modeling and machine learning. Prior advanced programming experience in R or Python is required.
