@@ -15,7 +15,7 @@ This data was originally used in a [Kaggle competition](https://www.kaggle.com/c
 
 ### Challenge 
 
-Your jobs is to study the spooky text data using tools from text mining and natural language processing such as sentiment analysis, topic modeling, etc, all available in `R` and write a small story about characteristics of the texts of each of the authors, identifying and illustrating interesting similarities anddifferences identified by your analysis. 
+Your jobs is to study the spooky text data using tools from text mining and natural language processing such as sentiment analysis, topic modeling, to clustering and modeling etc, all available in `R` and write a small story about characteristics of the texts of each of the authors, identifying and illustrating interesting similarities and differences identified by your analysis. 
 
 We note that the Kaggle website says the following about the data, "The data was prepared by chunking larger texts into sentences using CoreNLP's MaxEnt sentence tokenizer, so you may notice the odd non-sentence here and there."
 
