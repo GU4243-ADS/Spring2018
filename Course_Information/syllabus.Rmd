@@ -24,6 +24,8 @@ TA: Wenda Zhou.
 2. Discussion board: Piazza <https://piazza.com/columbia/spring2018/statgu4243_001_2018_1applieddatascience/home>
 3. Course Materials: Github <https://github.com/GU4243-ADS/Spring2018>
 
+The Applied Data Science course was developed by Tian Zheng <http://tzstatsads.github.io>.  Check out her page for example projects and past student work.
+
 # Evaluation 
 
 Evaluation of students' performance will be based on:
