@@ -1,6 +1,6 @@
 # Spring2018
 # Statistics GU4243 Applied Data Science
-([Syllabus](/CourseInfo/syllabus.Rmd))
+([Syllabus](/Course_Information/syllabus.Rmd))
 
 ----
 ### Project 1: (Individual)
