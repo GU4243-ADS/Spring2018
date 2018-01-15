@@ -3,7 +3,7 @@
 ([Syllabus](/Course_Information/syllabus.Rmd))
 
 ----
-### Project 1: (Individual)
+### Project Cycle 1: (Individual) R Notebook for SPOOKY Textual Analysis
 
 #### Class 1 (1/17)
 + [Class Introduction]
