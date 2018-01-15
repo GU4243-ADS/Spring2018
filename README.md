@@ -6,7 +6,7 @@
 ### Project Cycle 1: (Individual) R Notebook for SPOOKY Textual Analysis
 
 #### Class 1 (1/17)
-+ [Class Introduction]
++ [Class Introduction](/Tutorials/Intro.pdf)
 + [Project 1 Description](/Project_Starter_Codes/doc/project_description.Rmd) + [Example](https://github.com/TZstatsADS/fall2017-project1-BruceYanghy)
 
 #### Class 2 (1/22)
