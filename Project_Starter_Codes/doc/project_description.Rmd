@@ -7,7 +7,7 @@ For this project we're going to work with some SPOOKY data, and by that I mean o
 
 This data was originally used in a [Kaggle competition](https://www.kaggle.com/c/spooky-author-identification) that challenged data scientists to identify the authors of unlabeled text excerpts using a provided training data set.  Authorship identification is a popular subfield of Natural Language Processing (NLP) that uses data science and machine learning tools to try to identify the author of texts. See [1]-[3].  While we'll only be using labeled data and not exploring the prediction side of the problem, we want to use the challenge of author identification as a motivation in our stuy of this dataset.  Specifically we want to consider the similarities and the differences between the texts attributed to each author and study patterns that could be used to characterize the writing styles of the three authors.
 
-[1] David Madigan, Alexander Genkin, David D. Lewis, Shlomo Argamon, Dmitriy Fradkin, Li Ye. "Authorship attribution on the Large Scale." [available online:](http://dimacs.rutgers.edu/Research/MMS/PAPERS/authorid-csna05.pdf).
+[1] David Madigan, Alexander Genkin, David D. Lewis, Shlomo Argamon, Dmitriy Fradkin, Li Ye. "Authorship attribution on the Large Scale." [available online](http://dimacs.rutgers.edu/Research/MMS/PAPERS/authorid-csna05.pdf).
 
 [2] Efstathios Stamatatos. "A survey of modern authorship attribution methods." Journal of the American Society for information Science and Technology, 60(3):538–556, 2009.
 
