@@ -32,6 +32,9 @@ Adapted from [https://help.github.com/articles/github-glossary/](https://help.gi
 #### Work on GitHub Desktop
 * Work in local repository
     * Add/Change files
+    
+A *commit*, or "revision", is an individual change to a file. It's like when you save a file, except with Git, the save also creates a unique ID that allows you to keep record of what changes were made when and by who.    
+
     * Commit to local repository
 	* Push to remote repository
 	* Pull to local repository
