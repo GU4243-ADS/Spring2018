@@ -13,8 +13,6 @@ A *repository* is the most basic element of GitHub. They're easiest to imagine a
 * Create a new empty repository
 	* create through GitHub website
 	* create through GitHub desktop
-* Create a repository from existing local folder
-	* create through GitHub desktop
 	
 A *clone* is a copy of a repository that lives on your computer instead of on a website's server.	A *fork* is a personal copy of another user's repository that lives on your account. Forks allow you to freely make changes to a project without affecting the original.
 * Fork and Clone an existing git repository
