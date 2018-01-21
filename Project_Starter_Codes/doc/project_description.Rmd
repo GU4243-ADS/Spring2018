@@ -23,7 +23,7 @@ Even though this is an individual project, you are **encouraged** to discuss onl
 The dataset `sppoky.csv`  contains the text data.  It has three columns: `id` giving an identifier for each excerpt, `text` containing the excerpt, and `author` indicating either `EAP`, `HPL`, or `MWS`. 
 
 #### Submission
-You should produce an `R` notebook (rmd and html files) in your GitHub project folder, where you should write a story (think something like a blog post) on presidential inaugural speeches based on your data analysis. Your story should be supported by your results and appropriate visualizations. 
+You should produce an `R` notebook (rmd and html files) in your GitHub project folder, where you should write a story (think something like a blog post) on the spooky data based on your data analysis. Your story should be supported by your results and appropriate visualizations. 
 
 ### Project organization
 
