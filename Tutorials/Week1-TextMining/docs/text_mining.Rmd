@@ -9,7 +9,7 @@ output:
 
 # Introduction
 
-This files contains some simple analysis of the SPOOKY data.  The goal is to remind ourselves of some of our basic tools for working with text data in `R` and also to practice reproducibility.  You should be able to put this file in the `doc` folder of your `Project 1` repository and it should just run (provided you have `multiplot.R` in the `libs` folder and `spooky.csv` in the `data` folder).  If you open to file from a forked `Week1-GitHub` repo, you should have no trouble running the code directly.
+This files contains text mining analysis of the SPOOKY data.  You should be able to put this file in the `doc` folder of your `Project 1` repository and it should just run (provided you have `multiplot.R` in the `libs` folder and `spooky.csv` in the `data` folder).
 
 ## Setup the libraries
 First we want to install and load libraries we need along the way.  Note that the following code is completely reproducible -- you don't need to add any code on your own to make it run.
