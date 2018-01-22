@@ -2,8 +2,6 @@
 # Statistics GU4243 Applied Data Science
 ([Syllabus](/Course_Information/syllabus.Rmd))
 
-This is a stupid edit.
-
 ----
 ### Project Cycle 1: (Individual) R Notebook for SPOOKY Textual Analysis
 
