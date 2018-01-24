@@ -12,6 +12,7 @@
 #### Class 2 (1/22)
 + [Tutorial: R Markdown and R Notebooks](/Tutorials/RNotebook.Rmd)
 + [Tutorial: GitHub](/Tutorials/Week1-GitHub.md)
++ [Spooky Data Analysis](https://github.com/GU4243-ADS/Week1-GitHub)
 
 #### Class 3 (1/24)
 + [Tutorial: Text Mining](/Tutorials/Week1-TextMining)
