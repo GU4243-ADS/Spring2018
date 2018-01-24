@@ -68,7 +68,7 @@ spooky_wrd <- unnest_tokens(spooky, word, text)
 spooky_wrd <- anti_join(spooky_wrd, stop_words, by = "word")
 ````
 
-# Last Time
+# Last Time and some More
 
 ## Word Frequency
 
@@ -97,6 +97,39 @@ ggplot(author_words) +
   coord_flip() +
   facet_wrap(~ author) +
   theme(legend.position = "none")
+```
+
+## TF-IDF
+
+TF stands for term frequency or how often a word appears in a text and it is what is studied above in the word cloud. IDF stands for inverse document frequncy, and it is a way to pay more attention to words that are rare within the entire set of text data that is more sophisticated than simply removing stop words.  Multiplying these two values together calculates a term's tf-idf, which is the frequency of a term adjusted for how rarely it is used.  We'll use tf-idf as a heuristic index to indicate how frequently a certain author uses a word relative to the frequency that ll the authors use the word.  Therefore we will find words that are characteristic for a specific author, a good thing to have if we are interested in solving the author identification problem.
+
+```{r}
+
+frequency <- count(spooky_wrd, author, word)
+tf_idf    <- bind_tf_idf(frequency, word, author, n)
+
+tf_idf <- arrange(tf_idf, desc(tf_idf))
+tf_idf <- mutate(tf_idf, word = factor(word, levels = rev(unique(word))))
+tf_idf_30 <- top_n(tf_idf, 30, tf_idf)
+
+ggplot(tf_idf_30) +
+  geom_col(aes(word, tf_idf, fill = author)) +
+  labs(x = NULL, y = "TF-IDF values") +
+  theme(legend.position = "top", axis.text.x  = element_text(angle=45, hjust=1, vjust=0.9))
+```
+
+Note that in the above, many of the words recognized by their tf-idf scores are names.  This makes sense -- if we see text referencing Raymond, Idris, or Perdita, we know almost for sure that MWS is the author.  But some non-names stand out.  EAP often uses "monsieur" and "jupiter" while HPL uses the words "bearded" and "attic" more frequently than the others.  We can also look at the most characteristic terms per author.
+
+```{r}
+tf_idf <- ungroup(top_n(group_by(tf_idf, author), 20, tf_idf))
+  
+ggplot(tf_idf) +
+  geom_col(aes(word, tf_idf, fill = author)) +
+  labs(x = NULL, y = "tf-idf") +
+  theme(legend.position = "none") +
+  facet_wrap(~ author, ncol = 3, scales = "free") +
+  coord_flip() +
+  labs(y = "TF-IDF values")
 ```
 
 # Sentiment Analysis
