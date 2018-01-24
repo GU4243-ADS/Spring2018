@@ -9,13 +9,13 @@ output:
 
 # Introduction
 
-This files contains text mining analysis of the SPOOKY data.  You should be able to put this file in the `doc` folder of your `Project 1` repository and it should just run (provided you have `multiplot.R` in the `libs` folder and `spooky.csv` in the `data` folder).
+This files contains text mining analysis of the SPOOKY data.  The goal is to remind ourselves of some of our basic tools for working with text data in `R` and also to practice reproducibility.  You should be able to put this file in the `doc` folder of your `Project 1` repository and it should just run (provided you have `multiplot.R` in the `libs` folder and `spooky.csv` in the `data` folder).
 
 ## Setup the libraries
 First we want to install and load libraries we need along the way.  Note that the following code is completely reproducible -- you don't need to add any code on your own to make it run.
 
 ```{r, message = F, warning = F}
-packages.used <- c("ggplot2", "dplyr", "tibble", "tidyr",  "stringr", "tidytext", "topicmodels", "wordcloud")
+packages.used <- c("ggplot2", "dplyr", "tibble", "tidyr",  "stringr", "tidytext", "topicmodels", "wordcloud", "ggridges")
 
 # check packages that need to be installed.
 packages.needed <- setdiff(packages.used, intersect(installed.packages()[,1], packages.used))
@@ -33,6 +33,7 @@ library(stringr)
 library(tidytext)
 library(topicmodels)
 library(wordcloud)
+library(ggridges)
 
 source("../libs/multiplot.R")
 ```
@@ -61,7 +62,7 @@ spooky$author <- as.factor(spooky$author)
 
 ## Data Cleaning
 
-We first use the `unnest_tokens()` function to drop all punctuation and transform all words into lower case.  At least for now, the punctuation isn't really important to our analysis -- we want to study the words.  In addition, `tidytext` contains a dictionary of stop words, like "and" or "next", that we will get rid of for our analysis, the idea being that the non-common words (...maybe the SPOOKY words) that the authors use will be more interesting.
+We first use the `unnest_tokens()` function to drop all punctuation and transform all words into lower case.  At least for now, the punctuation isn't really important to our analysis -- we want to study the words.  In addition, `tidytext` contains a dictionary of stop words, like "and" or "next", that we will get rid of for our analysis, the idea being that the non-common words (...maybe the SPOOKY words) that the authors use will be more interesting.  If this is new to you, here's a textbook that can help: *[Text Mining with R; A Tidy Approach](https://www.tidytextmining.com)*.  It teaches the basic handling of natural language data in `R` using tools from the "tidyverse".  The tidy text format is a table with one token per row, where a token is a word.
 
 ```{r}
 spooky_wrd <- unnest_tokens(spooky, word, text)
@@ -98,6 +99,48 @@ ggplot(author_words) +
   facet_wrap(~ author) +
   theme(legend.position = "none")
 ```
+
+## Data Visualization
+
+We'll do some simple numerical summaries of the data to provide some nice visualizations.
+
+```{r, message = FALSE}
+p1 <- ggplot(spooky) +
+      geom_bar(aes(author, fill = author)) +
+      theme(legend.position = "none")
+
+spooky$sen_length <- str_length(spooky$text)
+head(spooky$sen_length)
+
+
+p2 <- ggplot(spooky) +
+      geom_density_ridges(aes(sen_length, author, fill = author)) +
+      scale_x_log10() +
+      theme(legend.position = "none") +
+      labs(x = "Sentence length [# characters]")
+
+spooky_wrd$word_length <- str_length(spooky_wrd$word)
+head(spooky_wrd$word_length)
+
+p3 <- ggplot(spooky_wrd) +
+      geom_density(aes(word_length, fill = author), bw = 0.05, alpha = 0.3) +
+      scale_x_log10() +
+      theme(legend.position = "none") +
+      labs(x = "Word length [# characters]")
+
+layout <- matrix(c(1, 2, 1, 3), 2, 2, byrow = TRUE)
+multiplot(p1, p2, p3, layout = layout)
+```
+
+
+From the above plots we find:
+
+*
+
+*
+
+*
+
 
 ## TF-IDF
 
