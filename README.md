@@ -13,5 +13,5 @@
 + [Tutorial: R Markdown and R Notebooks](/Tutorials/RNotebook.Rmd)
 + [Tutorial: GitHub](/Tutorials/Week1-GitHub.md)
 
-#### Class 2 (1/24)
+#### Class 3 (1/24)
 + [Tutorial: Text Mining](/Tutorials/Week1-TextMining)
