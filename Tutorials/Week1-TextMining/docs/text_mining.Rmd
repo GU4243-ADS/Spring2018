@@ -3,8 +3,8 @@ title: "Some Simple SPOOKY Data Analysis"
 author: "Cindy Rush"
 date: "January 22, 2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 # Introduction
@@ -65,6 +65,7 @@ spooky$author <- as.factor(spooky$author)
 We first use the `unnest_tokens()` function to drop all punctuation and transform all words into lower case.  At least for now, the punctuation isn't really important to our analysis -- we want to study the words.  In addition, `tidytext` contains a dictionary of stop words, like "and" or "next", that we will get rid of for our analysis, the idea being that the non-common words (...maybe the SPOOKY words) that the authors use will be more interesting.  If this is new to you, here's a textbook that can help: *[Text Mining with R; A Tidy Approach](https://www.tidytextmining.com)*.  It teaches the basic handling of natural language data in `R` using tools from the "tidyverse".  The tidy text format is a table with one token per row, where a token is a word.
 
 ```{r}
+# Make a table with one word per row and remove `stop words` (i.e. the common words).
 spooky_wrd <- unnest_tokens(spooky, word, text)
 spooky_wrd <- anti_join(spooky_wrd, stop_words, by = "word")
 ````
@@ -76,8 +77,10 @@ spooky_wrd <- anti_join(spooky_wrd, stop_words, by = "word")
 Now we study some of the most common words in the entire data set.  With the below code we plot the fifty most common words in the entire datset. We see that "time", "life", and "night" all appear frequently.
 
 ```{r}
+# Words is a list of words, and freqs their frequencies
 words <- count(group_by(spooky_wrd, word))$word
 freqs <- count(group_by(spooky_wrd, word))$n
+
 head(sort(freqs, decreasing = TRUE))
 wordcloud(words, freqs, max.words = 50, color = c("purple4", "red4", "black"))
 ```
@@ -85,7 +88,10 @@ wordcloud(words, freqs, max.words = 50, color = c("purple4", "red4", "black"))
 We can compare the way the authors use the most frequent words too.
 
 ```{r}
+# Counts number of times each author used each word.
 author_words <- count(group_by(spooky_wrd, word, author))
+
+# Counts number of times each word was used.
 all_words    <- rename(count(group_by(spooky_wrd, word)), all = n)
 
 author_words <- left_join(author_words, all_words, by = "word")
@@ -109,15 +115,16 @@ p1 <- ggplot(spooky) +
       geom_bar(aes(author, fill = author)) +
       theme(legend.position = "none")
 
+
 spooky$sen_length <- str_length(spooky$text)
 head(spooky$sen_length)
-
 
 p2 <- ggplot(spooky) +
       geom_density_ridges(aes(sen_length, author, fill = author)) +
       scale_x_log10() +
       theme(legend.position = "none") +
       labs(x = "Sentence length [# characters]")
+
 
 spooky_wrd$word_length <- str_length(spooky_wrd$word)
 head(spooky_wrd$word_length)
@@ -147,12 +154,15 @@ From the above plots we find:
 TF stands for term frequency or how often a word appears in a text and it is what is studied above in the word cloud. IDF stands for inverse document frequncy, and it is a way to pay more attention to words that are rare within the entire set of text data that is more sophisticated than simply removing stop words.  Multiplying these two values together calculates a term's tf-idf, which is the frequency of a term adjusted for how rarely it is used.  We'll use tf-idf as a heuristic index to indicate how frequently a certain author uses a word relative to the frequency that ll the authors use the word.  Therefore we will find words that are characteristic for a specific author, a good thing to have if we are interested in solving the author identification problem.
 
 ```{r}
-
 frequency <- count(spooky_wrd, author, word)
 tf_idf    <- bind_tf_idf(frequency, word, author, n)
+head(tf_idf)
+tail(tf_idf)
 
-tf_idf <- arrange(tf_idf, desc(tf_idf))
-tf_idf <- mutate(tf_idf, word = factor(word, levels = rev(unique(word))))
+tf_idf    <- arrange(tf_idf, desc(tf_idf))
+tf_idf    <- mutate(tf_idf, word = factor(word, levels = rev(unique(word))))
+
+# Grab the top thirty tf_idf scores in all the words 
 tf_idf_30 <- top_n(tf_idf, 30, tf_idf)
 
 ggplot(tf_idf_30) +
@@ -164,6 +174,7 @@ ggplot(tf_idf_30) +
 Note that in the above, many of the words recognized by their tf-idf scores are names.  This makes sense -- if we see text referencing Raymond, Idris, or Perdita, we know almost for sure that MWS is the author.  But some non-names stand out.  EAP often uses "monsieur" and "jupiter" while HPL uses the words "bearded" and "attic" more frequently than the others.  We can also look at the most characteristic terms per author.
 
 ```{r}
+# Grab the top twenty tf_idf scores in all the words for each author
 tf_idf <- ungroup(top_n(group_by(tf_idf, author), 20, tf_idf))
   
 ggplot(tf_idf) +
@@ -177,12 +188,13 @@ ggplot(tf_idf) +
 
 # Sentiment Analysis
 
-We will use sentences as units of analysis for this tutorial, as sentences are natural languge units for organizing thoughts and ideas. For each sentence, we apply sentiment analysis using [NRC sentiment lexion](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). "The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive). The annotations were manually done by crowdsourcing."
+We will use sentences as units of analysis for this part of the tutorial, as sentences are natural languge units for organizing thoughts and ideas. For each sentence, we apply sentiment analysis using [NRC sentiment lexion](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). "The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive). The annotations were manually done by crowdsourcing."
 
 From *[Text Mining with R; A Tidy Approach](https://www.tidytextmining.com)*, "When human readers approach text, we use our understanding of the emotional intent of words to infer whether a section of text is positive or negative, or perhaps characterized by some other more nuanced emotion like surprise or disgust.  We can also use the tools of text mining to approach the emotional content of text programmatically."  This is the goal of sentiment analysis.
 
 
 ```{r}
+# Keep words that have been classified within the NRC lexicon.
 get_sentiments('nrc')
 sentiments <- inner_join(spooky_wrd, get_sentiments('nrc'), by = "word")
 
@@ -205,7 +217,7 @@ ggplot(count(sentiments, author, sentiment)) +
 Let's only study the "positive" words.  Note that the amount of "postive" words attributed to each author varies greatly, and the relative frequency of "positive" words to the other sentiments also varies between authors.
 
 ```{r}
-nrc_pos    <- filter(get_sentiments('nrc'), sentiment == "positive")
+nrc_pos <- filter(get_sentiments('nrc'), sentiment == "positive")
 nrc_pos
 
 positive <- inner_join(spooky_wrd, nrc_pos, by = "word")
@@ -213,7 +225,7 @@ head(positive)
 count(positive, word, sort = TRUE)
 ```
 
-Now we plot a frequency comparison of these "positive" words.  Namely, we show the frequencies of the overall most frequently used positive words split between the three authors. 
+Now we plot a frequency comparison of these "positive" words.  Namely, we show the frequencies of the overall most frequently-used positive words split between the three authors. 
 
 ```{r}
 pos_words     <- count(group_by(positive, word, author))
@@ -255,8 +267,11 @@ Using these assumptions, LDA is a mathematical method for estimating both of the
 We use the `topicmodels` package for this analysis.  Since the `topicmodels` package doesn't use the `tidytext` framework, we first convert our `spooky_wrd` dataframe into a document term matrix (DTM) matrix using `tidytext` tools.
 
 ```{r}
+# Counts how many times each word appears in each sentence
 sent_wrd_freqs <- count(spooky_wrd, id, word)
 head(sent_wrd_freqs)
+
+# Creates a DTM matrix
 spooky_wrd_tm <- cast_dtm(sent_wrd_freqs, id, word, n)
 spooky_wrd_tm
 length(unique(spooky_wrd$id))
@@ -273,9 +288,10 @@ spooky_wrd_topics <- tidy(spooky_wrd_lda, matrix = "beta")
 spooky_wrd_topics
 ```
 
-We note that in the above we use the `tidy` function to extract the per-topic-per-word probabilities, called "beta" or $\beta$, for the model.  The final output has a one-topic-per-term-per-row format. For each combination, the model computes the probability of that term being generated from that topic. For example, the term “content” has a $1.619628 \times 10^{-5}$ probability of being generated from topic 4.  We visualizae the top terms (meaning the most likely terms associated with each topic) in the following.
+We note that in the above we use the `tidy` function to extract the per-topic-per-word probabilities, called "beta" or $\beta$, for the model.  The final output has a one-topic-per-term-per-row format. For each combination, the model computes the probability of that term being generated from that topic. For example, the term “content” has a $1.619628 \times 10^{-5}$ probability of being generated from topic 4.  We visualize the top terms (meaning the most likely terms associated with each topic) in the following.
 
 ```{r}
+# Grab the top five words for each topic.
 spooky_wrd_topics_5 <- ungroup(top_n(group_by(spooky_wrd_topics, topic), 5, beta))
 spooky_wrd_topics_5 <- arrange(spooky_wrd_topics_5, topic, -beta)
 spooky_wrd_topics_5 <- mutate(spooky_wrd_topics_5, term = reorder(term, beta))
@@ -285,6 +301,7 @@ ggplot(spooky_wrd_topics_5) +
   facet_wrap(~ topic, scales = "free", ncol = 4) +
   coord_flip()
 ```
+
 In the above, we see that the first topic is characterized by words like "love", "earth", and "words" while the third topic includes the word "thousand", and the fifth topic the word "beauty".  Note that the words "eyes" and "time" appear in many topics.  This is the advantage to topic modelling as opposed to clustering when using natural language -- often a word may be likely to appear in documents characterized by multiple topics.
 
 We can also study terms that have the greatest difference in probabilities between the topics, ignoring the words that are shared with similar frequency between topics. We choose only the first 3 topics as example and visualise the differences by plotting log ratios: $log_{10}(\beta \text{ of topic x }/ \beta \text{ of topic y})$. So if a word is 10 times more frequent in topic x the log ratio will be 1, whereas it will be -1 if the word is 10 times more frequent in topic y. 
@@ -327,14 +344,25 @@ spooky_wrd_topics_13 <- mutate(spooky_wrd_topics_13, term = reorder(term, log_ra
 p3 <- ggplot(spooky_wrd_topics_13) +
       geom_col(aes(term, log_ratio, fill = log_ratio > 0)) +
       theme(legend.position = "none") +
-      labs(y = "Log ratio of beta in topic 3 / topic 2") +
+      labs(y = "Log ratio of beta in topic 3 / topic 1") +
       coord_flip()
 
 
 layout <- matrix(c(1,2,3), 3, 1, byrow = TRUE)
 multiplot(p1, p2, p3, layout = layout)
 ```
+In the above, the words more common to topic 2 than topic 1 are "moon", "air", and "window" while the words more common to topic 1 are "moment", "marie", and "held".
 
+Above we look at the words representing each topic, we can also study the topics representing each documents, or in our case sentence.  We use the `tidy` function to extract the per-document-per-topic probabilities, called "gamma" or $\gamma$, for the model.
+
+```{r}
+spooky_wrd_docs <- tidy(spooky_wrd_lda, matrix = "gamma")
+spooky_wrd_docs
+```
+
+The above table holds the estimated proportion of words from that sentence (id) that are generated from that topic. For example, the model estimates that only about 8.301% of the words in sentence id00001 were generated from topic 1.
+
+Can we use this to find out if some authors have sentences of some topics mroe than others?  Is twelve topics the correct number?  Should sentences be the correct 'unit' here or should we do a topic analysis on three documents consisting on the corpus of each author's texts?
 
 Much of the above work was adapted from this post: <https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features>.  It also has some other ideas about how to analyze the spooky data that we didn't have time to cover in the tutorial.
 
