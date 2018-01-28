@@ -16,3 +16,7 @@
 
 #### Class 3 (1/24)
 + [Tutorial: Text Mining](/Tutorials/Week1-TextMining)
+
+#### Class 4 (1/29)
++ Discussion: [Project Evaluation Criteria](https://piazza.com/class/ja4fumjiqyo475?cid=9)
++ Discussion: Project Approach/Analysis
