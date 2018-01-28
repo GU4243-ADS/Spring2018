@@ -83,9 +83,9 @@ freqs <- count(group_by(spooky_wrd, word))$n
 
 head(sort(freqs, decreasing = TRUE))
 
-png("../figs/Wordcloud_all.png")
+#png("../figs/Wordcloud_all.png")
 wordcloud(words, freqs, max.words = 50, color = c("purple4", "red4", "black"))
-dev.off()
+#dev.off()
 ```
 
 We can compare the way the authors use the most frequent words too.
@@ -292,6 +292,8 @@ spooky_wrd_topics <- tidy(spooky_wrd_lda, matrix = "beta")
 spooky_wrd_topics
 ```
 
+## Topics Terms
+
 We note that in the above we use the `tidy` function to extract the per-topic-per-word probabilities, called "beta" or $\beta$, for the model.  The final output has a one-topic-per-term-per-row format. For each combination, the model computes the probability of that term being generated from that topic. For example, the term “content” has a $1.619628 \times 10^{-5}$ probability of being generated from topic 4.  We visualize the top terms (meaning the most likely terms associated with each topic) in the following.
 
 ```{r}
@@ -357,6 +359,8 @@ multiplot(p1, p2, p3, layout = layout)
 ```
 In the above, the words more common to topic 2 than topic 1 are "moon", "air", and "window" while the words more common to topic 1 are "moment", "marie", and "held".
 
+## Sentence Topics
+
 Above we look at the words representing each topic, we can also study the topics representing each documents, or in our case sentence.  We use the `tidy` function to extract the per-document-per-topic probabilities, called "gamma" or $\gamma$, for the model.
 
 ```{r}
@@ -366,7 +370,20 @@ spooky_wrd_docs
 
 The above table holds the estimated proportion of words from that sentence (id) that are generated from that topic. For example, the model estimates that only about 8.301% of the words in sentence id00001 were generated from topic 1.
 
-Can we use this to find out if some authors have sentences of some topics mroe than others?  Is twelve topics the correct number?  Should sentences be the correct 'unit' here or should we do a topic analysis on three documents consisting on the corpus of each author's texts?
+```{r}
+author_topics <- left_join(spooky_wrd_docs, spooky, by = c("document" = "id"))
+author_topics <- select(author_topics, -text)
+author_topics$topic <- as.factor(author_topics$topic)
+
+# Chooses the top topic per sentence
+author_topics <- ungroup(top_n(group_by(author_topics, document), 1, gamma))
+
+# Counts the number of sentences represented by each topic per author 
+author_topics <- ungroup(count(group_by(author_topics, author, topic)))
+```
+
+
+Can we use this to visualize which authorsuse which topics more than others?  Is twelve topics the correct number?  Should sentences be the correct 'unit' here or should we do a topic analysis on three documents consisting on the corpus of each author's texts?
 
 Much of the above work was adapted from this post: <https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features>.  It also has some other ideas about how to analyze the spooky data that we didn't have time to cover in the tutorial.
 
@@ -376,3 +393,5 @@ Much of the above work was adapted from this post: <https://www.kaggle.com/heads
 + [A shorter tutorial](https://www.digitalocean.com/community/tutorials/how-to-work-with-language-data-in-python-3-using-the-natural-language-toolkit-nltk)
 + [Sentiment analysis](https://pythonspot.com/en/python-sentiment-analysis/)
 + [Topic modeling](https://medium.com/@aneesha/topic-modeling-with-scikit-learn-e80d33668730)
+
+# A list of future directions to explore
