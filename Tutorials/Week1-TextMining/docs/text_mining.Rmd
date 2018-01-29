@@ -395,3 +395,46 @@ Much of the above work was adapted from this post: <https://www.kaggle.com/heads
 + [Topic modeling](https://medium.com/@aneesha/topic-modeling-with-scikit-learn-e80d33668730)
 
 # A list of future directions to explore
+
+* Punctuation -- typical sentence structure.  Clauses they have.  Number of commas or semicolons.
+* Dialog more often than others.
+* He/she 
+* n-grams, bi-grams
+* Groups of words that represent a theme.
+* Making a numerical dataset -- number of semicolons, number of words, type of punctuation, etc.
+* Length of sentence in words
+* Nouns, Adjectives, Adverbs, pronouns, etc.
+* We didn't do any stemming/lemmatization.
+* Any information in the stop words.
+* Studying the first and last words in the sentence.
+* Which author uses more questions than the others.
+* Customize stop_words 
+* HPL makes up a lot of words
+* Can we find specifically "British" words for MS.
+* Capitalization/sentence format
+* Sentence generation
+
+Sentiment Analysis
+
+* We did sentiment analysis at the word level. Can we do this at the sentence level? What proportion of sentences are "postive"? Ideas like this...
+* Kmeans on emotion counts per sentence.
+* Are the results from the other lexicons different?  If so, how?
+* We're looking at the word counts for each emotion... is some sort of normalization important here?
+* What are the top few emotions represented by each author?  Are they same across the authors.
+* Psycho profile of the authors.
+* Checking to see if the words actually match their profiles.  Study the number of negations.
+* Emotions never referenced.  What is left out?
+* Looking at sentence-level emotions, are there some emotions that occur together more often than others?
+
+Topic Modelling
+
+* To look at the top five sentence representing each topic.
+* Visualizing author topics
+* Is twelve topics best?  How can we determine how many topics to use?
+* Should we use other algorithms than LDA?
+
+
+* Lovecraft is writing about 100 years later.
+* MS is British
+
+
