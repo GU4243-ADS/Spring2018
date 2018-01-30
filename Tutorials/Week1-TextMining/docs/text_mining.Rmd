@@ -68,7 +68,7 @@ We first use the `unnest_tokens()` function to drop all punctuation and transfor
 # Make a table with one word per row and remove `stop words` (i.e. the common words).
 spooky_wrd <- unnest_tokens(spooky, word, text)
 spooky_wrd <- anti_join(spooky_wrd, stop_words, by = "word")
-````
+```
 
 # Last Time and some More
 
@@ -82,7 +82,12 @@ words <- count(group_by(spooky_wrd, word))$word
 freqs <- count(group_by(spooky_wrd, word))$n
 
 head(sort(freqs, decreasing = TRUE))
+
+png("../figs/Wordcloud_all.png")
 wordcloud(words, freqs, max.words = 50, color = c("purple4", "red4", "black"))
+dev.off()
+
+
 ```
 
 We can compare the way the authors use the most frequent words too.
@@ -304,7 +309,9 @@ ggplot(spooky_wrd_topics_5) +
 
 In the above, we see that the first topic is characterized by words like "love", "earth", and "words" while the third topic includes the word "thousand", and the fifth topic the word "beauty".  Note that the words "eyes" and "time" appear in many topics.  This is the advantage to topic modelling as opposed to clustering when using natural language -- often a word may be likely to appear in documents characterized by multiple topics.
 
-We can also study terms that have the greatest difference in probabilities between the topics, ignoring the words that are shared with similar frequency between topics. We choose only the first 3 topics as example and visualise the differences by plotting log ratios: $log_{10}(\beta \text{ of topic x }/ \beta \text{ of topic y})$. So if a word is 10 times more frequent in topic x the log ratio will be 1, whereas it will be -1 if the word is 10 times more frequent in topic y. 
+We can also study terms that have the greatest difference in probabilities between the topics, ignoring the words that are shared with similar frequency between topics. We choose only the first 3 topics as example and visualise the differences by plotting log ratios:
+$log_{10}(\beta \text{ of topic x }/ \beta \text{ of topic y})$.
+So if a word is 10 times more frequent in topic x the log ratio will be 1, whereas it will be -1 if the word is 10 times more frequent in topic y. 
 
 ```{r}
 spooky_wrd_topics <- mutate(spooky_wrd_topics, topic = paste0("topic", topic))
