@@ -8,7 +8,7 @@ a. Read the Project 1 Self-assessment below.
 
 b. If the answer to any of questions 1. - 3. in the self-assessment is 'no', then your assignment for today is to make sure the answer becomes 'yes' for all of these questions by the end of the class period.  Please use myself and Wenda -- we are here to help.
 
-c. If the answer to questions 1. - 3. in the self-assessment is 'yes', your assignment for today is to choose one of the potential analyses from our brainstorming session on Monday and explore it with the dataset.  At the end of class, you will have the opportunity to share with the class what you found.  Especially helpful to your classmates, would be sharing packages/tools you have found to be useful in your analysis beyond those we've already seen in the tutorial.
+c. If the answer to questions 1. - 3. in the self-assessment is 'yes', your assignment for today is to choose one (or more) of the potential analyses from our brainstorming session on Monday and explore it with the dataset.  At the end of class, you will have the opportunity to share with the class what you found.  Especially helpful to your classmates, would be sharing packages/tools you have found to be useful in your analysis beyond those we've already seen in the tutorial.
 
 d. If you're using Python for Project 1, please read the note to you at the end.
 
