@@ -76,8 +76,8 @@ Since much of the emphasis of Project 1 is on reproducibility and we are asking 
 # Some Handy Packages/Functions
 
 * Base R has `kmeans()` and `prcomp()` functions for clustering and PCA.
-* `wordnet` package <wordnet.princeton.edu>
-* A helpful write-up on R's MLP resources <rpubs.com/lmullen/nlp-chapter>
+* `wordnet` package <https://wordnet.princeton.edu>
+* A helpful write-up on R's MLP resources <https://rpubs.com/lmullen/nlp-chapter>
 
 # Some fun things
 
