@@ -73,6 +73,12 @@ Other
 
 Since much of the emphasis of Project 1 is on reproducibility and we are asking for a peer review, it would be nice if you incorporate your Python into an R Notebook and include necessary Python installation instruction in the appendix for your reader. (This won't be necessaray for all projects.)
 
+# Some Handy Packages/Functions
+
+* Base R has `kmeans()` and `prcomp()` functions for clustering and PCA.
+* `wordnet` package <wordnet.princeton.edu>
+* A helpful write-up on R's MLP resources <rpubs.com/lmullen/nlp-chapter>
+
 # Some fun things
 
 * ["Artificial Intelligence May Have Cracked Freaky 600-year-old Manuscript" on Gizmodo](https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232)
