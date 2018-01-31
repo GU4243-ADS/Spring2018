@@ -8,14 +8,9 @@ a. Read the Project 1 Self-assessment below.
 
 b. If the answer to any of questions 1. - 3. in the self-assessment is 'no', then your assignment for today is to make sure the answer becomes 'yes' for all of these questions by the end of the class period.  Please use myself and Wenda -- we are here to help.
 
-c. If the answer to questions 1. - 3. in the self-assessment is 'yes' your assignment for today is to choose one of the potential analyses from our brainstorming session on Monday and do it.  At the end of class, you will have the opportunity to share with the class what you found.  Especially helpful would be packages you have found to be useful in your analysis beyond those we've already seen in the tutorial.
+c. If the answer to questions 1. - 3. in the self-assessment is 'yes', your assignment for today is to choose one of the potential analyses from our brainstorming session on Monday and explore it with the dataset.  At the end of class, you will have the opportunity to share with the class what you found.  Especially helpful to your classmates, would be sharing packages/tools you have found to be useful in your analysis beyond those we've already seen in the tutorial.
 
 d. If you're using Python for Project 1, please read the note to you at the end.
-
-
-
-
-
 
 
 
@@ -77,3 +72,8 @@ Other
 # A Note to Python Users
 
 Since much of the emphasis of Project 1 is on reproducibility and we are asking for a peer review, it would be nice if you incorporate your Python into an R Notebook and include necessary Python installation instruction in the appendix for your reader. (This won't be necessaray for all projects.)
+
+# Some fun things
+
+* ["Artificial Intelligence may have Cracked Freaky 600-year-old Manuscript" on Gizmodo](https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232)
+* ["This Neural Net has Weird Ideas about what Humans Like to Eat"](http://aiweirdness.com/post/140508739392/the-neural-network-has-weird-ideas-about-what)
