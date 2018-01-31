@@ -48,7 +48,7 @@ Data Cleaning
 * Sentence generation
  
 Sentiment Analysis
-* We did sentiment analysis at the word level. Can we do this at the sentence level? What proportion of sentences are "postive"? Ideas like this...
+* We did sentiment analysis at the word level. Can we do this at the sentence level? What proportion of sentences are "postiive"? Ideas like this...
 * Kmeans on emotion counts per sentence.
 * Are the results from the other lexicons different? If so, how?
 * We're looking at the word counts for each emotion... is some sort of normalization important here?
@@ -71,7 +71,7 @@ Other
 
 # A Note to Python Users
 
-Since much of the emphasis of Project 1 is on reproducibility and we are asking for a peer review, it would be nice if you incorporate your Python into an R Notebook and include necessary Python installation instruction in the appendix for your reader. (This won't be necessaray for all projects.)
+Since much of the emphasis of Project 1 is on reproducibility and we are asking for a peer review, it would be nice if you incorporate your Python into an R Notebook and include necessary Python installation instruction in the appendix for your reader. (This won't be necessary for all projects.)
 
 # Some Handy Packages/Functions
 
