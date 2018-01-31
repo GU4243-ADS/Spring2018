@@ -20,3 +20,6 @@
 #### Class 4 (1/29)
 + Discussion: [Project Evaluation Criteria](https://piazza.com/class/ja4fumjiqyo475?cid=9)
 + Discussion: Project Approach/Analysis
+
+#### Class 5 (1/31)
++ [Assignment](/Additional_Docs/Class_1_31)
