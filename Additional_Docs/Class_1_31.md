@@ -75,5 +75,5 @@ Since much of the emphasis of Project 1 is on reproducibility and we are asking 
 
 # Some fun things
 
-* ["Artificial Intelligence may have Cracked Freaky 600-year-old Manuscript" on Gizmodo](https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232)
-* ["This Neural Net has Weird Ideas about what Humans Like to Eat"](http://aiweirdness.com/post/140508739392/the-neural-network-has-weird-ideas-about-what)
+* ["Artificial Intelligence May Have Cracked Freaky 600-year-old Manuscript" on Gizmodo](https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232)
+* ["This Neural Net Has Weird Ideas About What Humans Like To Eat"](http://aiweirdness.com/post/140508739392/the-neural-network-has-weird-ideas-about-what)
