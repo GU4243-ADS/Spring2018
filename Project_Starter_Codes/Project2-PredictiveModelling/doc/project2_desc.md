@@ -10,7 +10,7 @@ Your client is interested in creating a mobile AI program that accurately distin
 
 The portability of this AI program (holding storage and memory cost) and the computational efficiency (test running time cost) are of great concern to your client. This translates to a balance between the complexity of variables/features/models used and the predictive performance. 
 
-![image](predictiveprogram.png)
+![image](../figs/predictiveprogram.png)
 
 Assume that the **current practice** on your client side is just using [boosted](https://en.wikipedia.org/wiki/Boosting_(machine_learning)) [decision stumps](https://en.wikipedia.org/wiki/Decision_stump) on [SIFT features](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform). `R` package [`gbm`](https://cran.r-project.org/package=gbm) can be used to implement this classifier. 
 
