@@ -4,7 +4,7 @@
 In this project, we will carry out **model evaluation and selection** for predictive analytics on image data. As data scientists, we often need to **evaluate** different modeling/analysis strategies and decide what is the best. Such decisions need to be supported by sound evidence in the form of *model assessment, validation and comparison*. In addition, we also need to **communicate our decision and supporting evidence** clearly and convincingly in an accessible fashion.
 
 #### Challenge
-For this project, you will receive a set of 4390 labeled images of cats and dogs originally constructed by The Oxford-IIIT Pet Dataset (http://www.robots.ox.ac.uk/%7Evgg/data/pets/). 
+For this project, you will receive a set of 4387 labeled images of cats and dogs originally constructed by [The Oxford-IIIT Pet Dataset](http://www.robots.ox.ac.uk/%7Evgg/data/pets/). 
 
 Your client is interested in creating a mobile AI program that accurately distinguishes between pictures of dogs and cats. 
 
@@ -61,7 +61,7 @@ The presentation can be technical but must be accessible to other students in ou
 
 You can use any tools for *feature engineering* as you will be processing features for the test images on 3/5.
  
-+ Your feature processing needs to be reasonably efficient as you will have only 30 minutes to process 3000 new images. 
++ Your feature processing needs to be reasonably efficient as you will have only 30 minutes to process around 3000 new images. 
 + Your feature program should have 
 	+ a folder path as an input 
 	+ and output a single (if you are using R) RData file that contains feature R object as input for your `main.RMD` and `train.R` program.
