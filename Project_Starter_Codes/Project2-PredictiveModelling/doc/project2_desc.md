@@ -80,7 +80,7 @@ GitHub_proj/
 ├──output/
 ├──README.md
 ```
-- The `data` folder should contain the raw image data and a file that contains groundtruth labels for the images. Currently there is a data folder with example hand-written zipcode images for the starter codes along with a folder containing the project data. You should **remove** the zipcode data from your final repo.
+- The `data` folder currently contains example hand-written zipcode images for the starter codes. You should **remove** the zipcode data from your final repo.  The project data is too big for Github.
 - The `doc` folder should have documentations for this project, presentation files and other supporting materials. You should have a final `main.RMD` following the template given in the starter codes. Your `main.RMD` can assume that there is a data folder of raw images outside the root with subfolders corresponding to the training set and the test set. 
 - The `figs` folder contains figure files produced during the project and running of the codes. 
 - (For R users) The `lib` folder contain R codes for the AI program. It should have the following files: `feature.R`, `train.R`, and `test.R`. The codes in the `lib` folder are not intended to be run directly but to be called from `main.RMD`. 
@@ -100,7 +100,7 @@ The instructional team will download each team's GitHub repo and cross-examine e
 
 ##### Working together
 - Setup a GitHub project folder with everyone listed as contributor. Everyone clones the project locally and create a local branch. 
-- The data is too big to be stored on GitHub. You can fork the repo to a local folder for this class or all your data science projects and have the data stored in "../data/" from root. Your project folder may look like
+- The data is too big to be stored on GitHub. You can fork the repo to a local folder and have the data stored in "../data/" from root. Your project folder may look like
 
 ```
 local proj/
