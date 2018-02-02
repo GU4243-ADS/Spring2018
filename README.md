@@ -2,10 +2,12 @@
 # Statistics GU4243 Applied Data Science
 ([Syllabus](/Course_Information/syllabus.Rmd))
 
-##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis) | [Project 2](#project-cycle-2-predictive-modelling-with-image-data) |
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis) | [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
 ----
 
 ### Project Cycle 1: (Individual) R Notebook for SPOOKY Textual Analysis
+
+##### Shortcuts: [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
 
 ([starter codes](/Project_Starter_Codes/Project1-RNotebook))
 #### Class 1 (1/17)
@@ -30,6 +32,8 @@
 ----
 
 ### Project Cycle 2: Predictive Modelling with Image Data
+
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis)
 
 ([starter codes](/Project_Starter_Codes/Project2-PredictiveModelling))
 
