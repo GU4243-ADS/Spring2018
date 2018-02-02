@@ -35,3 +35,20 @@
 
 #### Class 6 (2/5)
 + Project 1 Peer Reviews
++ [Project 2](Project_Starter_Codes/Project2-PredictiveModelling/doc/project2_desc.md) starts.
+  + Check Piazza for your project team and GitHub join link.
+  + After you join Project 2, you can **clone** your team's GitHub repo to your local computer. 
+  + You can find in the *starter codes* 
+    + the project description, 
+    + an example project 
+    
+#### Class 7 (2/7)  
++ [Intro to Project 3]
++ [Example `main.Rmd`]
+
+#### Class 8 (2/11) 
++ Tutorial (Wenda)
+
+#### Class 9 (2/13) 
++ Tutorial (Wenda)
+
