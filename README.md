@@ -43,8 +43,8 @@
     + an example project 
     
 #### Class 7 (2/7)  
-+ [Intro to Project 3]
-+ [Example `main.Rmd`]
++ Intro to Project 2
++ Example `main.Rmd`
 
 #### Class 8 (2/11) 
 + Tutorial (Wenda)
