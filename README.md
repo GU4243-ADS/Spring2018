@@ -40,6 +40,7 @@
 ([starter codes](/Project_Starter_Codes/Project2-PredictiveModelling))
 
 #### Class 6 (2/5)
++ Please remember to 'turn in' your project 1 on Courseworks in Assignment 1.  If you don't do this, you will not be assigned peer review.
 + Project 1 Peer Reviews
   + [Example 1](https://github.com/GU4243-ADS/spring2018-project1-wantingcheng)
   + [Example 2](https://github.com/GU4243-ADS/spring2018-project1-danieljosephparker)
