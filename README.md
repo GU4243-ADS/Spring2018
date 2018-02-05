@@ -42,9 +42,9 @@
 #### Class 6 (2/5)
 + Project 1 Peer Reviews
   + [Example 1](https://github.com/GU4243-ADS/spring2018-project1-wantingcheng)
-  + Example 2
+  + [Example 2](https://github.com/GU4243-ADS/spring2018-project1-danieljosephparker)
 + [Project 2](Project_Starter_Codes/Project2-PredictiveModelling/doc/project2_desc.md) starts.
-  + Check Piazza for your project team and GitHub join link.
+  + Check Piazza for your project team and I'll email the GitHub join link to each group tomorrow.
   + After you join Project 2, you can **clone** your team's GitHub repo to your local computer. 
   + You can find in the *starter codes* 
     + the project description, 
