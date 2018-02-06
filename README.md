@@ -53,7 +53,7 @@
     
 #### Class 7 (2/7)  
 + [Intro to Project 2](/Tutorials/Project2Intro)
-+ Example [`main.Rmd`](/Project_Starter_Codes/Project2-PredictiveModelling/docs/main.Rmd)
++ Example [`main.Rmd`](/Project_Starter_Codes/Project2-PredictiveModelling/doc/main.Rmd)
 
 #### Class 8 (2/11) 
 + Tutorial (Wenda)
