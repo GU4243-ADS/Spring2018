@@ -22,18 +22,18 @@ feature <- function(img_dir, set_name, data_name="data", export=T){
   ### determine img dimensions
   img0 <-  readImage(paste0(img_dir, "img", "_", data_name, "_", set_name, "_", 1, ".jpg"))
   mat1 <- as.matrix(img0)
-  n_r <- nrow(img0)
+  n_r  <- nrow(img0)
   
   ### store vectorized pixel values of images
   dat <- matrix(NA, n_files, n_r) 
   for(i in 1:n_files){
-    img <- readImage(paste0(img_dir,  "img", "_", data_name, "_", set_name, "_", i, ".jpg"))
+    img     <- readImage(paste0(img_dir,  "img", "_", data_name, "_", set_name, "_", i, ".jpg"))
     dat[i,] <- rowMeans(img)
   }
   
   ### output constructed features
   if(export){
-    save(dat, file=paste0("../output/feature_", data_name, "_", set_name, ".RData"))
+    save(dat, file = paste0("../output/feature_", data_name, "_", set_name, ".RData"))
   }
   return(dat)
 }
