@@ -52,7 +52,7 @@
     + an example project 
     
 #### Class 7 (2/7)  
-+ [Intro to Project 2](/Tutorials/Project2Intro)
++ [Intro to Project 2](/Tutorials/Project2Intro.pdf)
 + Example [`main.Rmd`](/Project_Starter_Codes/Project2-PredictiveModelling/doc/main.Rmd)
 
 #### Class 8 (2/11) 
