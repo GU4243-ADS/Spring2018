@@ -1,5 +1,5 @@
 ---
-title: "Project 3 - Example Main Script"
+title: "Project 2 - Example Main Script"
 author: "Yuting Ma, Tian Zheng with updates by Cindy Rush"
 date: "February 2, 2018"
 output:
