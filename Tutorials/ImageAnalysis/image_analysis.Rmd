@@ -224,7 +224,7 @@ img_bengal_bw <- channel(img_bengal, mode="gray")
 img_seg1 <- thresh(img_bengal_bw, w=60, h=60, offset=0.06) # {f = matrix(1, nc=2*w+1, nr=2*h+1) ; f=f/sum(f) ; x>(filter2(x, f)+offset)}
 img_seg2 <- opening(img_seg1, kern=makeBrush(11, shape='disc'))
 img_seg3 <- opening(img_seg1, kern=makeBrush(5, shape='disc'))
-img_seg <- combine(img_seg1, img_seg2, img_seg3)
+img_seg <- EBImage::combine(img_seg1, img_seg2, img_seg3)
 display(img_seg, all=TRUE)
 ```
 
@@ -237,7 +237,7 @@ img_leaf <- readImage("leaf.png")
 img_leaf <- resize(img_leaf, 128, 128)
 img_leaf <- channel(img_leaf, mode="gray")
 img_leaf1 <- thresh(img_leaf, w=50, h=50, offset=0.05)
-display(combine(img_leaf,img_leaf1), all=TRUE)
+display(EBImage::combine(img_leaf,img_leaf1), all=TRUE)
 oc <- ocontour(bwlabel(img_leaf1))
 plot(oc[[1]], type='l')
 points(oc[[1]], col=2)
