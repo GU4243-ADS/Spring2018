@@ -27,7 +27,6 @@ print(img)
 * With EBImage:display image using an interactive JavaScript viewer (shown in browser) or R's built-in graphics capabilities
 ```{r}
 display(img)
-text(x = 20, y = 20, label = "chicken", adj = c(0,1), col = "orange", cex = 2)
 ```
 
 * To display in R graphics: 
@@ -99,7 +98,7 @@ The brightness is the "mean" of an image.
 ```{r}
 img_bright <- img + 0.2
 img_dark <- img - 0.2
-display(combine(img_bright, img_dark), all=TRUE)
+display(EBImage::combine(img_bright, img_dark), all=TRUE)
 ```
 
 ### Adjust contrast
@@ -111,13 +110,13 @@ the image.
 ```{r}
 img_low <- img * 0.5
 img_high <- img * 2
-display(combine(img_low, img_high), all=TRUE)
+display(EBImage::combine(img_low, img_high), all=TRUE)
 ```
 
 ```{r}
 img_low_c <- (img - mean(img)) * 0.5 + mean(img)
 img_high_c <- (img - mean(img)) * 2 + mean(img)
-display(combine(img_low_c, img_high_c), all=TRUE)
+display(EBImage::combine(img_low_c, img_high_c), all=TRUE)
 ```
 
 ### Crop image
