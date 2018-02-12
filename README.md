@@ -56,7 +56,8 @@
 + Example [`main.Rmd`](/Project_Starter_Codes/Project2-PredictiveModelling/doc/main.Rmd)
 
 #### Class 8 (2/11) 
-+ Tutorial (Wenda)
++ [Basic Image Tutorial](/Tutorials/ImageAnalysis/image_analysis.Rmd)
++ [Example (cont'd) on pets data](/Project_Starter_Codes/Project2-PredictiveModelling/doc/main_pets.Rmd)
 
 #### Class 9 (2/13) 
 + Tutorial (Wenda)
