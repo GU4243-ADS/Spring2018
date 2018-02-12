@@ -1,0 +1,93 @@
+---
+title: "Starter code (pets dataset)"
+output: html_notebook
+---
+
+This document contains some starter code for the pets dataset. It is not in the expected
+format but instead gives some pointers on working with the pets dataset (which is much
+larger than the zipcode dataset).
+
+```{r}
+if(!require("EBImage")){
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("EBImage")
+}
+
+if(!require("gbm")){
+  install.packages("gbm")
+}
+
+if(!require("pbapply")){
+  install.packages("pbapply")
+}
+
+library("EBImage")
+library("gbm")
+library("tidyverse")
+```
+
+
+We first set the working directory to the location of the `main.Rmd` file (it should be in a project folder). Then we specify the location of our training data. Recall this data will be outside the project folder as it doesn't fit on Github.
+
+```{r}
+setwd("Spring2018/Project_Starter_Codes/Project2-PredictiveModelling/doc") 
+# Replace the above with your own path or manually set it in RStudio to where the main.rmd file is located. 
+```
+
+```{r}
+img_train_dir  <- "../data/pets/train/" # This is where my data lives (outside of Spring2018)
+labels = read_csv(paste(img_train_dir, '../train_label.txt', sep=''), col_names = c('label'))
+
+labels
+```
+
+Now I will read in the data and record the dimensions of the images.
+In order to use the simple features we looked at in class last week
+(row averages of the pixel values), we need to find a subset of the data all having the same
+number of rows. First I read in the data and store only the dimensions of the matrix of
+pixel values in order to find a subset with the same number of rows.
+
+```{r}
+n_files <- length(list.files(img_train_dir))
+n_files
+```
+
+There are 2000 files. Even reading them will take a while. Let's work on a small
+subset of the first 500 files.
+```{r}
+n_files <- 500
+```
+
+We read in all the images and store their dimensions in the `dat` matrix.
+```{r}
+dat <- matrix(NA, nrow = n_files, ncol = 3) 
+imgs <- vector("list", n_files)
+
+for(i in 1:n_files){
+  img <- readImage(paste0(img_train_dir,  "pet", i, ".jpg"))
+  imgs[[i]] <- img
+  dat[i, 1:length(dim(img))] <- dim(img)
+}
+```
+
+Let's get some information about the images.
+```{r}
+# How many B/W images?  All color.
+table(dat[, 3])
+# How many rows in each image?
+table(dat[, 1])
+```
+
+However, the usual strategy to deal with images of different sizes is to resize them
+to have the same size. This will allow us to deal with them in a uniform manner, and
+potentially reduce the amount of required computation.
+
+```{r}
+img_resized = pblapply(imgs, function(img) { resize(img, 128, 128) })
+dim(img_resized[[1]])
+```
+
+Resizing images is often an appropriate way to deal with images of various sizes.
+However, we should be careful with the aspect ratios. Indeed, if we distort it
+too much the image may become hard to recognise. A common strategy is to first
+crop the image to a square image, then resize the image.
