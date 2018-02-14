@@ -20,7 +20,10 @@ when we get them from Python.
 ```{r}
 library(reticulate)
 
-# for some reason I need to import cv2 before EBImage
+# If you are using anaconda, point reticulate to the correct conda environment
+# use_condaenv('your-environment')
+
+# for some reason I need to import cv2 and tensorflow before EBImage
 # or everything breaks.
 cv2 <- reticulate::import('cv2')
 
@@ -247,3 +250,103 @@ OpenCV implements numerous experimental feature extractors, which may be found
 [here](https://docs.opencv.org/3.4.0/d7/d7a/group__xfeatures2d__experiment.html).
 They vary in the goal and type of feature produced, but you may wish to explore
 some of them for your project.
+
+# Neural network features
+
+Neural networks are a vast class of methods that are able to train classifiers
+from the data. However, we are also able to make use of pre-trained neural networks
+as feature extractors, avoiding the expensive training process (usually several days).
+This method is often called [transfer learning](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0)
+and we will try extract some features from a small network called mobilenet today.
+
+As with OpenCV, tensorflow is mainly a Python library, so the R library is simply a bridge
+to the python library that you must have on your computer. You can folllow the
+instructions on the R tensorflow [website](https://tensorflow.rstudio.com/tensorflow/)
+to install tensorflow.
+```{r}
+# In theory, we should just be able to use the line below,
+# but I have some compatibility issues.
+
+# library(tensorflow)
+tf <- import('tensorflow')
+```
+
+```{r}
+# Tensorflow uses global state, this resets it if things get
+# mucked up.
+tf$reset_default_graph()
+```
+
+We load a pretrained network called MobileNet. It has the advantage of
+being small and fast but also reasonably accurate. It was trained on a large
+dataset called [ImageNet](http://www.image-net.org/), and it is believed that
+such a procedure creates an estimator that is able to capture general properties
+of images.
+```{r}
+model_path <- 'mobilenet_v1_0.50_224/quantized_graph.pb'
+
+data <- with(tf$gfile$FastGFile(model_path, 'rb') %as% f, {
+  f$read()
+})
+
+graph_def <- tf$GraphDef()
+graph_def$ParseFromString(data)
+```
+
+Tensorflow represents networks as large graphs of operations. We need to get a
+reference to the "first" node, where the data is fed in, and a reference to
+the last node, wher features are output.
+```{r}
+graph_elems <- tf$import_graph_def(
+  graph_def,
+  name='',
+  return_elements=c('input:0',
+                    'MobilenetV1/Predictions/Reshape:0'))
+
+graph_input <- graph_elems[[1]]
+graph_output <- graph_elems[[2]]
+```
+
+```{r}
+graph_input
+graph_output
+```
+
+We see that the first node should be an image of size 224 x 224, and the output
+is a vector of length 1001.
+
+Let us get our image into the right format, and run it through the network.
+Note that this network was designed to have the image scaled from -1 to 1,
+so we need to do some rescaling of the image again.
+```{r}
+img_resized <- cv2$resize(img, tuple(224L, 224L))
+img_nnet <- (img_resized - 0.5) * 2
+```
+
+To run operations in tensorflow we need access to a session. You only need to create
+a single one (in fact, you should avoid creating more than one).
+```{r}
+sess <- tf$Session()
+```
+
+We now convert our image to the required shape and ask tensorflow to run the required
+operations. This produces a feature vector of length 1001 that we can then use to
+perform classification.
+```{r}
+input_img <- np_array(img_nnet, dtype='float32')
+input_img <- input_img$reshape(1L, 224L, 224L, 3L)
+
+features <- sess$run(
+  graph_output,
+  feed_dict=dict(graph_input=input_img))
+
+features <- as.vector(features)
+```
+
+Unfortunately, although such features are often able to produce good estimators,
+they are usually not easily interpretable. We have plotted the feature values
+below, but they do not necessarily give any insight into the image. Additionally,
+further methods are required to perform detection if it is desired.
+```{r}
+plot(features)
+```
