@@ -60,5 +60,5 @@
 + [Example (cont'd) on pets data](/Project_Starter_Codes/Project2-PredictiveModelling/doc/main_pets.Rmd)
 
 #### Class 9 (2/13) 
-+ Tutorial (Wenda)
++ [Advanced Image Tutorial](/Tutorials/ImageAnalysis/image_analysis_advanced.Rmd) (including SIFT, neural networks)
 
