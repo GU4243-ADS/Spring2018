@@ -1,0 +1,249 @@
+---
+title: "Advanced Image Analysis"
+output: html_notebook
+---
+
+In this notebook, we discuss more advanced image analysis techniques. Unfortunately,
+a number of these techniques are not available in R packages, but only in python packages.
+We will mostly be using a R to Python bridge to use these features, provided by the reticulate
+package. To reproduce the code below, you will need to install the [reticulate](https://rstudio.github.io/reticulate/articles/introduction.html)
+package, but also make sure that the Python environment being called by the reticulate
+package contains the requisite dependencies.
+
+If you do not have an existing scientific python installation consider installing
+[Anaconda Python](https://www.anaconda.com/download/). I recommend the Python 3.6
+version.
+
+We will also be using EBImage on the R side to be able to display the images in R
+when we get them from Python.
+
+```{r}
+library(reticulate)
+
+# for some reason I need to import cv2 before EBImage
+# or everything breaks.
+cv2 <- reticulate::import('cv2')
+
+library(EBImage)
+```
+
+We will use the Python OpenCV package. This package implements a wide array of advanced
+image analysis methods that may be useful in extracting features.
+
+# Introduction to OpenCV
+
+The OpenCV package is called `cv2` in python, and contains functionality to
+perform both basic image analysis tasks and more advanced image analysis tasks.
+To import the python package in R we will use reticulate's `import` function,
+which is similar to R's `library` function, except that we must name the result.
+
+```{r}
+# This imports the cv2 package.
+cv2 <- reticulate::import('cv2')
+```
+
+We can read an image from CV2 as an array of pixel values. Note that cv2 imread
+reads in the image as values from 0 to 255, instead of values from 0 to 1, so
+we are required to divide by 255 to obtain the floating point image values
+we are used to.
+```{r}
+img <- cv2$imread('pet1.jpg') / 255
+img_leaf <- cv2$imread('leaf.png') / 255
+```
+
+We can convert this to an `EBImage::Image` to display in R. However, we must take
+care of two things: the image is read in with integer values 0-255 instead of
+floating point values 0-1, and the rows and columns are permuted due to different
+conventions in storing two-dimensional arrays in R and Python. Nonetheless, we can
+convert the data into an image and display it in R:
+
+```{r}
+img_r <- EBImage::Image(aperm(img, c(2, 1, 3)), colormode = 'Color')
+plot(img_r)
+```
+
+Here, we have made two modifications to the image: first, we have used
+the `aperm` function to permute the first and second dimensions of the `img`
+array, to swap the rows and the columns. Secondly, we have divided by 255
+to convert back to a value between 0 and 1.
+
+Since we will use this more, let us create a function to convert a Python Image
+to a R image.
+
+```{r}
+to_ebimage <- function(img) {
+    EBImage::Image(aperm(img, c(2, 1, 3)), colormode = 'Color')
+}
+```
+
+# Image analysis and features
+
+A step common to almost all image analysis strategies is to extract so-called features
+from an image. Indeed, it is often difficult to reason about the pixels of an image
+directly, as they interact in complex fashions that is difficult to capture (in fact,
+only one type of model today reasons from pixel values directly: neural networks).
+Instead, we will attempt to extract some numbers from the image which hopefully correspond
+to higher-order features of the image, and train our classifiers on the extracted values
+(often called features).
+
+OpenCV implements a wide variety of features. We will focus on a number of estimators
+based on HOG (Histogram of Oriented Gradients) ideas. These estimators attempt to
+extract the orientation of edges in the image, which we believe are one of the main
+features of images.
+
+## Image derivatives
+
+Most of the algorithms described today will make use of image derivatives, which
+attempt to quantify the change in the image. OpenCV has built in functions to
+apply these derivatives. The most common derivatives are the Laplacian and the
+Sobel derivatives.
+
+```{r}
+laplacian <- cv2$Laplacian(img, cv2$CV_64F)
+plot(to_ebimage(laplacian))
+```
+
+```{r}
+sobel_x <- cv2$Sobel(img, cv2$CV_64F, 1L, 0L)
+sobel_y <- cv2$Sobel(img, cv2$CV_64F, 0L, 1L)
+plot(to_ebimage(sobel_x))
+plot(to_ebimage(sobel_y))
+```
+
+These derivatives measure the changes in the image, and are thus often
+able to detect edges. The next two procedures will attempt to extract
+useful information from such as directions from the edges and build
+lower-dimensional features.
+
+## HOG (Histogram of oriented gradients)
+
+The histogram of oriented gradients attempts to extract gradient information
+(direction and magnitude) over many blocks of the image.
+
+```{r}
+# We create a HOG object
+# The only parameter of real importance here is winSize,
+# but we are required to pass in at least this many parameters
+# so that OpenCV can figure out which function we want to call.
+
+winSize <- tuple(64L,64L)
+blockSize <- tuple(16L,16L)
+blockStride <- tuple(8L,8L)
+cellSize <- tuple(8L,8L)
+nbins = 9L
+
+hog = cv2$HOGDescriptor(winSize,blockSize,blockStride,cellSize,nbins)
+```
+
+Most algorithms only work over images of fixed sizes. Let us resize the image
+and compute the hog descriptor on the image. We note that the HOG descriptor
+only accepts inputs in the 0-255 uint8 format, and so we need to specify
+this as our input type.
+```{r}
+img_resized <- cv2$resize(img, dsize=tuple(64L, 64L))
+hog_values <- hog$compute(np_array(img_resized * 255, dtype='uint8'))
+```
+
+We thus compute a feature vector of length 1764 (in this case) which corresponds
+to the HOG features of our image.
+
+## SIFT (Scale-invariant feature transformation)
+
+SIFT is one of the most popular feature extraction tools. It attempts to detect keypoints
+at different scales of the image by using a combination of the gradient ideas and the
+HOG ideas. OpenCV contains one of the better implementations of SIFT, along with
+tools to visualize the SIFT features.
+
+However, note that SIFT can only operate on grayscale images, we thus need to convert
+our images to grayscale first. We can use the EBImage tools we have seen in the previous
+tutorial, or use the native OpenCV tools.
+
+If we use the native OpenCV tools, we must again be careful to coerce the arrays
+to the correct data type (in this case, single precision float).
+
+```{r}
+img_gray <- cv2$cvtColor(np_array(img, dtype='float32'), cv2$COLOR_BGR2GRAY)
+```
+
+Let us now create a SIFT feature extractor, get the features and draw them
+on a given image. Again, the SIFT feature extractor only works on uint8 images,
+and we thus need to convert our image back to the specified format.
+
+```{r}
+sift <- cv2$xfeatures2d$SIFT_create()
+img_gray_uint8 <- np_array(img_gray * 255, dtype='uint8')
+keypoints <- sift$detect(img_gray_uint8, NULL)
+```
+
+We can draw the keypoints and display the image with all the keypoints.
+```{r}
+img_keypoints <- cv2$drawKeypoints(img_gray_uint8,
+                                   keypoints, NULL,
+                                   flags=cv2$DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+plot(to_ebimage(img_keypoints / 255))
+```
+
+SIFT summarises each keypoint with a vector of length 128. We can again use OpenCV
+to compute these values. Alternatively, we can do both in one go by using
+`sift$detectAndCompute`.
+```{r}
+keypoints_and_values <- sift$compute(img_gray_uint8, keypoints)
+values <- keypoints_and_values[[2]]
+dim(values)
+```
+
+We have thus obtained vectors describing every keypoint. However, the number
+of keypoints varies from images to images, hence any classifier we use on these
+features must handle that. Common choices include Bag-of-Words (or Bag-of-Feature)
+and Topic models. On the other hand, an advantage of sift is that there is no
+need to resize the images as the estimator naturally deals with images of
+different sizes.
+
+## Dense SIFT
+
+An alternative to the problem of a variable number of features above is to compute
+the so-called dense sift, where we compute the sift features at a number of equally
+spaced keypoints. For example, for a 128x128 image, we may attempt to compute features
+at a grid of equally sized keypoints (e.g. every 16 pixels). This creates a grid
+of 64 keypoints.
+
+```{r}
+keypoints_dense <- apply(as.matrix(expand.grid(1:8, 1:8)), 1, function (x) {
+  cv2$KeyPoint((x[1] - 0.5) * 16, (x[2] - 0.5) * 16, 16)
+})
+```
+
+```{r}
+img_gray_resized <- cv2$cvtColor(np_array(img_resized, dtype='float32'),
+                                 cv2$COLOR_BGR2GRAY)
+
+img_gray_resized_uint8 <- np_array(img_gray_resized * 255, dtype='uint8')
+
+img_keypoints_dense <- cv2$drawKeypoints(
+  img_gray_resized_uint8, keypoints_dense, NULL,
+  flags=cv2$DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+plot(to_ebimage(img_keypoints_dense / 255))
+```
+
+We may then compute the SIFT features at these equally spaced keypoints. This in
+effect extract features that are very similar to the HOG features.
+
+```{r}
+res_dense <- sift$compute(img_gray_resized_uint8, keypoints_dense)
+values_dense <- res_dense[[2]]
+dim(values_dense)
+```
+
+We see that we obtain an array of 64 features of dimension 128. As we chose the number
+of points, we always have the same number of features and can thus use standard classifiers.
+On the other hand, this method requires us to systematically resize the image to a single
+consistent size.
+
+## Other feature extractors.
+
+OpenCV implements numerous experimental feature extractors, which may be found
+[here](https://docs.opencv.org/3.4.0/d7/d7a/group__xfeatures2d__experiment.html).
+They vary in the goal and type of feature produced, but you may wish to explore
+some of them for your project.
