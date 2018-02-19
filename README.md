@@ -63,5 +63,8 @@
 + [Advanced Image Tutorial](/Tutorials/ImageAnalysis/image_analysis_advanced.Rmd) (including SIFT, neural networks)
 + [Training Data SIFT Features](https://drive.google.com/file/d/128fqgPZa6I-ZlB_xqhFmO6KmdJyLN1nB/view?usp=sharing)
 
-#### Class 9 (2/19) 
+#### Class 10 (2/19) 
 + [Classification Tutorial 1](/Tutorials/Classification_1)
+
+#### Class 11 (2/21) 
++ Classification Tutorial 2
