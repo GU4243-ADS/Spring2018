@@ -68,5 +68,5 @@
 + Reading: Chapter 2 in [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
 
 #### Class 11 (2/21) 
-+ Classification Tutorial 2
++ [Classification Tutorial 2](/Tutorials/Classification_2)
 + Reading: Chapter 7, 8, 10 in [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
