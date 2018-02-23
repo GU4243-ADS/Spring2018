@@ -64,9 +64,9 @@
 + [Training Data SIFT Features](https://drive.google.com/file/d/128fqgPZa6I-ZlB_xqhFmO6KmdJyLN1nB/view?usp=sharing)
 
 #### Class 10 (2/19) 
-+ [Classification Tutorial 1](/Tutorials/Classification_1)
++ [Classification Tutorial 1](/Tutorials/Classification_1.pdf)
 + Reading: Chapter 2 in [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
 
 #### Class 11 (2/21) 
-+ [Classification Tutorial 2](/Tutorials/Classification_2)
++ [Classification Tutorial 2](/Tutorials/Classification_2.pdf)
 + Reading: Chapters 7 and 10 in [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
