@@ -70,3 +70,9 @@
 #### Class 11 (2/21) 
 + [Classification Tutorial 2](/Tutorials/Classification_2.pdf)
 + Reading: Chapters 7 and 10 in [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
+
+#### Class 12 (2/26) 
++ Group work on Project 2
+
+#### Class 13 (2/28) 
++ [Project 2 Submission Details](/Tutorials/Project2Final.pdf)
