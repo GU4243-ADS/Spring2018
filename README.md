@@ -76,3 +76,10 @@
 
 #### Class 13 (2/28) 
 + [Project 2 Submission Details](/Tutorials/Project2Final.pdf)
+
+#### Class 14 (3/5) 
++ Test Data Release
++ Project Presentations
+
+#### Class 15 (3/7) 
++ Project Presentations
