@@ -78,7 +78,7 @@
 + [Project 2 Submission Details](/Tutorials/Project2Final.pdf)
 
 #### Class 14 (3/5) 
-+ Test Data Release
++ [Test Data Release](https://drive.google.com/open?id=13ZETt15pg7XAFxG4ZyE97wYqhAxRQSnC)
 + Project Presentations
 
 #### Class 15 (3/7) 
