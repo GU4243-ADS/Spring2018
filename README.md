@@ -83,3 +83,22 @@
 
 #### Class 15 (3/7) 
 + Project Presentations
+
+#### Project results
+| Group   | Model    | Accuracy | [Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa) |
+|---------|----------|----------|-------|
+| Group 1 | Baseline | 71%      | 30%   |
+| Group 1 | Improved | 90%      | 82%   |
+| Group 2 | Baseline | 66%      | 0%    |
+| Group 2 | Improved | 54%      | -3%   |
+| Group 3 | Baseline | 72%      | 28%   |
+| Group 3 | Improved | 75%      | 41%   |
+| Group 4 | Baseline | NA       | NA    |
+| Group 4 | Improved | 57%      | 5%    |
+| Group 5 | Baseline | 60%      | 21%   |
+| Group 5 | Improved | 62%      | 12%   |
+| Group 6 | Baseline | 72%      | 33%   |
+| Group 6 | Improved | 70%      | 33%   |
+| Group 7 | Baseline | 71%      | 26%   |
+| Group 7 | Improved | 71%      | 30%   |
+
