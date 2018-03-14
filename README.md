@@ -102,3 +102,8 @@
 | Group 7 | Baseline | 71%      | 26%   |
 | Group 7 | Improved | 71%      | 30%   |
 
+----
+
+### Project Cycle 3: Algorithm Implementation and Evaluation
+
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis), [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
