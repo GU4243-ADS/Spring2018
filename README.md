@@ -2,7 +2,7 @@
 # Statistics GU4243 Applied Data Science
 ([Syllabus](/Course_Information/syllabus.Rmd))
 
-##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis) | [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis) | [Project 2](#project-cycle-2-predictive-modelling-with-image-data) | [Project 3](#project-cycle-3-algorithm-implementation-and-evaluation) | [Project 4](#project-cycle-4-open-project)
 
 ----
 
@@ -10,7 +10,7 @@
 
 ([starter codes](/Project_Starter_Codes/Project1-RNotebook))
 
-##### Shortcuts: [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
+##### Shortcuts: [Project 2](#project-cycle-2-predictive-modelling-with-image-data), [Project 3](#project-cycle-3-algorithm-implementation-and-evaluation), [Project 4](#project-cycle-4-individual-projects)
 
 #### Class 1 (1/17)
 + [Class Introduction](/Tutorials/Intro.pdf)
@@ -35,7 +35,7 @@
 
 ### Project Cycle 2: Predictive Modelling with Image Data
 
-##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis)
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis), [Project 3](#project-cycle-3-algorithm-implementation-and-evaluation), [Project 4](#project-cycle-4-individual-projects)
 
 ([starter codes](/Project_Starter_Codes/Project2-PredictiveModelling))
 
@@ -106,7 +106,7 @@
 
 ### Project Cycle 3: Algorithm Implementation and Evaluation
 
-##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis), [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
+##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis), [Project 2](#project-cycle-2-predictive-modelling-with-image-data), [Project 4](#project-cycle-4-individual-projects)
 
 ([starter codes](/Project_Starter_Codes/Project3-Algorithms))
 
@@ -137,3 +137,14 @@
 #### Class 21 (4/11)
 + Project Presentations
 
+----
+
+### Project Cycle 4: Open Project
+
+#### Class 22 (4/16)
+#### Class 23 (4/18)
+#### Class 24 (4/23)
++ Project Presentations
+#### Class 25 (4/25)
++ Project Presentations
+#### Class 26 (4/30)
