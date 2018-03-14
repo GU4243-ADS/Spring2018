@@ -142,13 +142,14 @@
 ### Project Cycle 4: Open Project
 
 #### Class 22 (4/16)
-+ Project Proposals
++ Project Proposal Preparations
 
 #### Class 23 (4/18)
++ Project Proposal Presentations
 
 #### Class 24 (4/23)
 
 #### Class 25 (4/25)
 
 #### Class 26 (4/30)
-+ Project Presentations
++ Final Project Presentations
