@@ -107,3 +107,33 @@
 ### Project Cycle 3: Algorithm Implementation and Evaluation
 
 ##### Shortcuts: [Project 1](#project-cycle-1-individual-r-notebook-for-spooky-textual-analysis), [Project 2](#project-cycle-2-predictive-modelling-with-image-data)
+
+([starter codes](/Project_Starter_Codes/Project3-Algorithms))
+
+#### Class 16 (3/19)
++ [Project 3](Project_Starter_Codes/Project3-Algorithms/doc/project3_desc.md) starts.
+  + Check Piazza for your project team and I'll email the GitHub join link to each group tomorrow.
+  + After you join Project 3, you can **clone** your team's GitHub repo to your local computer. 
+  + You can find in the *starter codes* 
+    + the project description, 
+    + the relevant papers,
+    + the data
+    
+#### Class 17 (3/21)
+
+#### Class 18 (3/26)
+
+#### Class 19 (3/28)
+
+#### Class 20 (4/2)
++ Work Week
+
+#### Class 21 (4/4)
++ Work Week
+
+#### Class 20 (4/9)
++ Project Presentations
+
+#### Class 21 (4/11)
++ Project Presentations
+
