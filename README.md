@@ -116,8 +116,8 @@
   + After you join Project 3, you can **clone** your team's GitHub repo to your local computer. 
   + You can find in the *starter codes* 
     + the project description, 
-    + the relevant papers,
-    + the data
+    + the relevant papers.
+  + Full details of the algorithm assignments will be posted to Piazza.
     
 #### Class 17 (3/21)
 
