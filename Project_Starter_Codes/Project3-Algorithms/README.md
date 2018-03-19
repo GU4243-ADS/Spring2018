@@ -6,7 +6,7 @@
 ----
 
 
-### [Project Description](doc/)
+### [Project Description](doc/project3_desc.md)
 
 Term: Spring 2018
 
