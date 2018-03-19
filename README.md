@@ -119,6 +119,7 @@
     + the relevant papers.
   + Full details of the algorithm assignments are posted in the [Data Description](Project_Starter_Codes/Project3-Algorithms/doc/DataDescription.md).
   + [Intro Tutorial](/Tutorials/Project3Intro.pdf)
+  + [A NYT Article](https://www.nytimes.com/2018/03/10/opinion/sunday/youtube-politics-radical.html) from a few days ago about YouTube's recommender system.
     
 #### Class 17 (3/21)
 
