@@ -117,7 +117,8 @@
   + You can find in the *starter codes* 
     + the project description, 
     + the relevant papers.
-  + Full details of the algorithm assignments will be posted to Piazza.
+  + Full details of the algorithm assignments are posted in the [Data Description](Project_Starter_Codes/Project3-Algorithms/doc/DataDescription.md).
+  + [Intro Tutorial](/Tutorials/Project3Intro.pdf)
     
 #### Class 17 (3/21)
 
