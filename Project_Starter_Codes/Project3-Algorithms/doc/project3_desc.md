@@ -50,4 +50,7 @@ All developments need to be carried out in group-shared private repo on our Gith
 3. Su, X., & Khoshgoftaar, T. M. (2009). A survey of collaborative filtering techniques. Advances in artificial intelligence, 2009, 4.
 * A review paper of collaborative filtering.
 
+4. Jeh, G., & Widom, J. (2002, July).  SimRank: a measure of structural-context similarity.  In Proceedings of the eighth ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 538-543). ACM.
+* Proposes the SimRank similarity measure.
+
 Others to be added...
