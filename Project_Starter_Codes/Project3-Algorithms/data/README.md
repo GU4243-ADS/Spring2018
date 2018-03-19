@@ -1,4 +1,4 @@
-# Project 2: Predictive Modelling
+# Project 3: Algorithm Implementation and Evaluation
 
 ### Data folder
 
