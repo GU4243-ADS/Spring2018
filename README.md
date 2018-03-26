@@ -125,9 +125,9 @@
 + Snow Day
 
 #### Class 18 (3/26)
-+[Memory-based Model Starter Code](Project_Starter_Codes/Project3-Algorithms/doc/memory_based_model.R)
-+[Relevant Functions](Project_Starter_Codes/Project3-Algorithms/lib/functions.R)
-+[Tutorial Clustering](Tutorials/Project3_Clustering.pdf)
++ [Memory-based Model Starter Code](Project_Starter_Codes/Project3-Algorithms/doc/memory_based_model.R)
++ [Relevant Functions](Project_Starter_Codes/Project3-Algorithms/lib/functions.R)
++ [Tutorial Clustering](Tutorials/Project3_Clustering.pdf)
 
 #### Class 19 (3/28)
 
