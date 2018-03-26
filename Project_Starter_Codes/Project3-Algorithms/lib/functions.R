@@ -7,6 +7,7 @@
 ### ADS Spring 2018
 
 
+
 MS_data_transform <- function(MS) {
   
   ## Calculate UI matrix for Microsoft data
