@@ -130,6 +130,7 @@
 + [Tutorial Clustering](Tutorials/Project3_Clustering.pdf)
 
 #### Class 19 (3/28)
++ [Tutorial Clustering](Tutorials/Project3_Clustering.pdf)
 
 #### Class 20 (4/2)
 + Work Week
