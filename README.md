@@ -117,12 +117,17 @@
   + You can find in the *starter codes* 
     + the project description, 
     + the relevant papers.
-  + Full details of the algorithm assignments are posted in the [Data Description](Project_Starter_Codes/Project3-Algorithms/doc/DataDescription.md).
-  + [Intro Tutorial](/Tutorials/Project3Intro.pdf)
++ Full details of the algorithm assignments are posted in the [Data Description](Project_Starter_Codes/Project3-Algorithms/doc/DataDescription.md).
++ [Intro Tutorial](/Tutorials/Project3Intro.pdf)
++ [A NYT Article](https://www.nytimes.com/2018/03/10/opinion/sunday/youtube-politics-radical.html) from a few days ago about YouTube's recommender system.
     
 #### Class 17 (3/21)
++ Snow Day
 
 #### Class 18 (3/26)
++ [Memory-based Model Starter Code](Project_Starter_Codes/Project3-Algorithms/doc/memory_based_model.R)
++ [Relevant Functions](Project_Starter_Codes/Project3-Algorithms/lib/functions.R)
++ [Tutorial Clustering](Tutorials/Project3_Clustering.pdf)
 
 #### Class 19 (3/28)
 

@@ -34,6 +34,7 @@ setwd("Spring2018/Project_Starter_Codes/Project2-PredictiveModelling/doc")
 ```
 
 Now we provide directories for teh raw images. Here we assume the training set and test set are in different subfolders. 
+
 ```{r}
 experiment_dir <- "../data/zipcode/" # This will be modified for different data sets.
 img_train_dir  <- paste(experiment_dir, "train/", sep="")
