@@ -143,7 +143,7 @@
 
 #### Class 21 (4/11)
 + Project Presentations
-+ [Group 4's Utility Measure](Additional_Docs/utility_measure.R) (Discussion by Noah)
++ [Group 4's Utility Measure](Additional_Docs/Utility Measure.R) (Discussion by Noah)
 + [Group 3's EM Algorithm](Additional_Docs/em.R) (Discussion by Jerome)
 + [Group 3's SimRank Algorithm](Additional_Docs/simmrank_chunzi.R) (Discussion by Chunzi)
 
