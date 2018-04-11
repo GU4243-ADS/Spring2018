@@ -1,8 +1,7 @@
-
 ordered.list.score <- function(labeled.data, prob_predictions) {
   ############## Calculating expected, recomended-list utilities #########
   
-  ranks.recommend <-  t(apply(-prob_predictions, 1, rank))   # decsending, magnitude-ordered rankings based on predicted probabilties
+  ranks.recommend <-  t(apply(-prob_predictions, 1, rank, ties.method = "first"))   # decsending, magnitude-ordered rankings based on predicted probabilties
   # - sign to get descending ranks, t() to return matrix to proper shape after apply().
   
   visit.prob.recommend <-  2^(-(ranks.recommend - 1)/(5-1))     # probabilty of visiting item based on rank ordering of recommendations
