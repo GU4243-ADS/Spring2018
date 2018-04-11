@@ -143,18 +143,22 @@
 
 #### Class 21 (4/11)
 + Project Presentations
++ Group 4's Utility Measure (Discussion by Noah)
++ Group 3's EM Algorithm (Discussion by Jerome)
++ [Group 3's SimRank Algorithm](Additional_Docs/simmrank_chunzi.R) (Discussion by Chunzi)
 
 ----
 
 ### Project Cycle 4: Open Project
 
 #### Class 22 (4/16)
-+ Project Proposal Preparations
++ Project Proposal Prep
 
 #### Class 23 (4/18)
-+ Project Proposal Presentations
++ Project Proposal Prep
 
 #### Class 24 (4/23)
++ Project Proposal Presentations
 
 #### Class 25 (4/25)
 
