@@ -156,11 +156,13 @@
 
 #### Class 23 (4/18)
 + Project Proposal Prep
++ **By the end of class today**: Each group must have a 1-2 page description of the project topic in the root README of the group's GitHub repo.  The description should link to any important papers and/or data used in the project and also include a timeline, including division of labor, for finishing the project.
 
 #### Class 24 (4/23)
-+ Project Proposal Presentations
++ Project Proposal Presentations: Each group will give a 2-3 minute in-class project pitch where they briefly tell the class about the goals of the project. After the pitch, we'll brainstorm ideas for the project and/or additional directions for the group to explore.
 
 #### Class 25 (4/25)
++ Project Work Day
 
 #### Class 26 (4/30)
 + Final Project Presentations
