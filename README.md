@@ -160,6 +160,7 @@
 
 #### Class 24 (4/23)
 + Project Proposal Presentations: Each group will give a 2-3 minute in-class project pitch where they briefly tell the class about the goals of the project. After the pitch, we'll brainstorm ideas for the project and/or additional directions for the group to explore.
++ We'll use the group numbers to provide the order (Group 1 first, Group 2 second, Group 3 third, and so on...)
 
 #### Class 25 (4/25)
 + Project Work Day
